@@ -5,6 +5,7 @@
 #include <vector>
 #include "task2/MutexQueue.h"
 #include "task2/ConditionalQueue.h"
+#include "task2/AtomicQueue.h"
 
 using namespace std::chrono;
 using std::cout;
@@ -54,6 +55,8 @@ void task2(Queue *queue, size_t producers_count, size_t consumers_count, size_t 
     }
     *is_produced = true;
 
+    cout << "Produced\n";
+
     size_t consumed = 0;
     for (auto &consumer_t : consumers) {
         consumed += consumer_t.get();
@@ -70,8 +73,9 @@ void task2(Queue *queue, size_t producers_count, size_t consumers_count, size_t 
 
 int main() {
 
-    Queue *queue = new ConditionalQueue(64);
 //    Queue *queue = new MutexQueue();
-    task2(queue, 1, 4, 4 * 1024 * 1024);
+//    Queue *queue = new ConditionalQueue(1);
+    Queue *queue = new AtomicQueue(16);
+    task2(queue, 1, 4, 1024 * 1024);
     return 0;
 }

@@ -10,12 +10,8 @@ void ConditionalQueue::push(uint8_t val) {
             items_check_w_cv.wait(lock);
             items.push(val);
         }
-        if (items.size() < max_size) {
-            items_check_w_cv.notify_one();
-        }
-
-        items_check_r_cv.notify_one();
     }
+    items_check_r_cv.notify_one();
 }
 
 bool ConditionalQueue::pop(uint8_t &val) {
