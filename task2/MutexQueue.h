@@ -17,6 +17,8 @@ private:
     mutex write_m;
     timed_mutex read_m;
 
+    bool is_read_available(const bool *canceled);
+
 public:
     void push(uint8_t val) override;
 

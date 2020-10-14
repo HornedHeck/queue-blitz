@@ -4,6 +4,7 @@
 #include <chrono>
 #include <vector>
 #include "task2/MutexQueue.h"
+#include "task2/ConditionalQueue.h"
 
 using namespace std::chrono;
 using std::cout;
@@ -16,38 +17,42 @@ void producer(size_t size, Queue *queue) {
     }
 }
 
-size_t consumer(Queue *queue) {
+size_t consumer(Queue *queue, bool *is_produced) {
     uint8_t res = 0;
     size_t consumed = 0;
-    for (; queue->pop(res); ++consumed);
+//    for (; !*is_produced || queue->pop(res); ++consumed);
+    while (true) {
+        auto read = queue->pop(res);
+        if (read) {
+            ++consumed;
+        }
+        if (*is_produced && !read) break;
+    }
     return consumed;
 }
 
-int main() {
-
-    Queue *queue = new MutexQueue();
-
-    size_t size = 1024 * 1024;
-    size_t producer_count = 2;
-    size_t consumers_count = 4;
+void task2(Queue *queue, size_t producers_count, size_t consumers_count, size_t size = 4 * 1024 * 1024) {
 
     auto start = system_clock::now();
 
     vector<thread> producers;
-    producers.reserve(producer_count);
-    for (int i = 0; i < producer_count; ++i) {
+    producers.reserve(producers_count);
+    for (int i = 0; i < producers_count; ++i) {
         producers.emplace_back(producer, size, queue);
     }
 
+    bool *is_produced = new bool(false);
+
     vector<std::future<size_t>> consumers;
-    consumers.reserve(producer_count);
+    consumers.reserve(producers_count);
     for (int i = 0; i < consumers_count; ++i) {
-        consumers.push_back(std::async(consumer, queue));
+        consumers.push_back(std::async(consumer, queue, is_produced));
     }
 
     for (auto &producer_t : producers) {
         producer_t.join();
     }
+    *is_produced = true;
 
     size_t consumed = 0;
     for (auto &consumer_t : consumers) {
@@ -57,9 +62,16 @@ int main() {
     auto end = system_clock::now();
 
     cout
-            << "Produced: " << size * producer_count << endl
+            << "Produced: " << size * producers_count << endl
             << "Consumed: " << consumed << endl
             << "Elapsed: " << duration_cast<milliseconds>(end - start).count() << endl;
 
+}
+
+int main() {
+
+    Queue *queue = new ConditionalQueue(64);
+//    Queue *queue = new MutexQueue();
+    task2(queue, 1, 4, 4 * 1024 * 1024);
     return 0;
 }
