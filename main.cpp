@@ -75,7 +75,7 @@ int main() {
 
 //    Queue *queue = new MutexQueue();
 //    Queue *queue = new ConditionalQueue(1);
-    Queue *queue = new AtomicQueue(16);
-    task2(queue, 1, 4, 1024 * 1024);
+    Queue *queue = new AtomicQueue<16>();
+    task2(queue, 1, 4, 1024 * 1024 * 4);
     return 0;
 }
