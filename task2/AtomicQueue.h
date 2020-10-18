@@ -18,7 +18,7 @@ enum State {
     FREE, STORING, LOADING
 };
 
-template<size_t max_size>
+
 class AtomicQueue : public Queue {
 
 private:
@@ -29,10 +29,11 @@ private:
     mutex w_signal;
     condition_variable r_cv;
     condition_variable w_cv;
+    size_t max_size;
 
 public:
 
-    AtomicQueue() {
+    explicit AtomicQueue(size_t maxSize) : max_size(maxSize) {
         w_state.store(FREE);
         r_state.store(FREE);
     }

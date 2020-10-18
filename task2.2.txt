@@ -1,0 +1,238 @@
+Producers:  1 2 4
+Consumers:  1 2 4
+P 1 C 1
+Producer 0 - 33870ms
+Consumer 0 - 4194304 - 33871ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 1 C 2
+Producer 0 - 35271ms
+Consumer 1 - 2096887 - 35272ms
+Consumer 0 - 2097417 - 35272ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 1 C 4
+Producer 0 - 37014ms
+Consumer 3 - 1047996 - 37015ms
+Consumer 2 - 1048907 - 37015ms
+Consumer 0 - 1048578 - 37015ms
+Consumer 1 - 1048823 - 37015ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 2 C 1
+Producer 1 - 67969ms
+Producer 0 - 68002ms
+Consumer 0 - 8388608 - 68003ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 2 C 2
+Producer 0 - 68634ms
+Producer 1 - 68650ms
+Consumer 1 - 4059717 - 68651ms
+Consumer 0 - 4328891 - 68651ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 2 C 4
+Producer 0 - 61860ms
+Producer 1 - 61884ms
+Consumer 0 - 2098031 - 61885ms
+Consumer 1 - 2069548 - 61885ms
+Consumer 3 - 2107382 - 61885ms
+Consumer 2 - 2113647 - 61885ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 4 C 1
+Producer 2 - 69028ms
+Producer 1 - 69047ms
+Producer 3 - 69059ms
+Producer 0 - 69109ms
+Consumer 0 - 16777216 - 69110ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 4 C 2
+Producer 3 - 74679ms
+Producer 2 - 74705ms
+Producer 0 - 74779ms
+Producer 1 - 74791ms
+Consumer 1 - 7963926 - 74792ms
+Consumer 0 - 8813290 - 74792ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 4 C 4
+Producer 0 - 77893ms
+Producer 1 - 77897ms
+Producer 3 - 77898ms
+Producer 2 - 77908ms
+Consumer 2 - 4243966 - 77909ms
+Consumer 3 - 4111101 - 77909ms
+Consumer 0 - 4192527 - 77909ms
+Consumer 1 - 4229622 - 77909ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 1 C 1
+Producer 0 - 9494ms
+Consumer 0 - 4194304 - 9495ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 1 C 2
+Producer 0 - 9396ms
+Consumer 1 - 2290622 - 9397ms
+Consumer 0 - 1903682 - 9397ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 1 C 4
+Producer 0 - 10522ms
+Consumer 3 - 1017245 - 10523ms
+Consumer 2 - 985103 - 10523ms
+Consumer 0 - 1111815 - 10523ms
+Consumer 1 - 1080141 - 10523ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 2 C 1
+Producer 0 - 18828ms
+Producer 1 - 21238ms
+Consumer 0 - 8388608 - 21239ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 2 C 2
+Producer 0 - 33446ms
+Producer 1 - 33501ms
+Consumer 1 - 4599734 - 33502ms
+Consumer 0 - 3788874 - 33502ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 2 C 4
+Producer 0 - 44439ms
+Producer 1 - 44467ms
+Consumer 2 - 2185542 - 44468ms
+Consumer 0 - 1924481 - 44468ms
+Consumer 3 - 2086252 - 44468ms
+Consumer 1 - 2192333 - 44468ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 4 C 1
+Producer 3 - 51735ms
+Producer 0 - 51757ms
+Producer 2 - 51938ms
+Producer 1 - 51939ms
+Consumer 0 - 16777216 - 51940ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 4 C 2
+Producer 3 - 68434ms
+Producer 1 - 68443ms
+Producer 0 - 68447ms
+Producer 2 - 68450ms
+Consumer 0 - 8290165 - 68451ms
+Consumer 1 - 8487051 - 68450ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 4 C 4
+Producer 3 - 79936ms
+Producer 2 - 79940ms
+Producer 1 - 79941ms
+Producer 0 - 79945ms
+Consumer 0 - 4208834 - 79946ms
+Consumer 1 - 4190551 - 79946ms
+Consumer 3 - 4180392 - 79946ms
+Consumer 2 - 4197439 - 79946ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 1 C 1
+Producer 0 - 2391ms
+Consumer 0 - 4194304 - 2392ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 1 C 2
+Producer 0 - 3150ms
+Consumer 0 - 2046891 - 3151ms
+Consumer 1 - 2147413 - 3151ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 1 C 4
+Producer 0 - 4724ms
+Consumer 2 - 1101121 - 4725ms
+Consumer 3 - 957979 - 4725ms
+Consumer 0 - 1048786 - 4725ms
+Consumer 1 - 1086418 - 4725ms
+Produced: 4194304
+Consumed: 4194304
+Result: OK
+P 2 C 1
+Producer 0 - 5980ms
+Producer 1 - 6183ms
+Consumer 0 - 8388608 - 6184ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 2 C 2
+Producer 1 - 33556ms
+Producer 0 - 33600ms
+Consumer 1 - 4451968 - 33601ms
+Consumer 0 - 3936640 - 33601ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 2 C 4
+Producer 1 - 36195ms
+Producer 0 - 36207ms
+Consumer 1 - 2185355 - 36208ms
+Consumer 0 - 2057584 - 36208ms
+Consumer 2 - 2177703 - 36208ms
+Consumer 3 - 1967966 - 36208ms
+Produced: 8388608
+Consumed: 8388608
+Result: OK
+P 4 C 1
+Producer 3 - 40302ms
+Producer 1 - 41232ms
+Producer 2 - 41267ms
+Producer 0 - 41285ms
+Consumer 0 - 16777216 - 41286ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 4 C 2
+Producer 1 - 64346ms
+Producer 0 - 64367ms
+Producer 3 - 64405ms
+Producer 2 - 64407ms
+Consumer 1 - 8565630 - 64408ms
+Consumer 0 - 8211586 - 64408ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+P 4 C 4
+Producer 1 - 73265ms
+Producer 0 - 73269ms
+Producer 3 - 73270ms
+Producer 2 - 73273ms
+Consumer 3 - 4080323 - 73273ms
+Consumer 1 - 4348635 - 73274ms
+Consumer 2 - 4223604 - 73274ms
+Consumer 0 - 4124654 - 73274ms
+Produced: 16777216
+Consumed: 16777216
+Result: OK
+
+Process finished with exit code 0

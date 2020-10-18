@@ -1,0 +1,28 @@
+Thread counts: 1 2 4 16 
+Is delayed: 1
+Mutex executor:
+Thread count: 1
+Execution time: 56514ms
+
+Thread count: 2
+Execution time: 28499ms
+
+Thread count: 4
+Execution time: 14220ms
+
+Thread count: 16
+Execution time: 3636ms
+
+Atomic executor:
+Thread count: 1
+Execution time: 56495ms
+
+Thread count: 2
+Execution time: 28468ms
+
+Thread count: 4
+Execution time: 14406ms
+
+Thread count: 16
+Execution time: 3627ms
+
