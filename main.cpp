@@ -265,6 +265,5 @@ int main(int argc, char *argv[]) {
         default:
             cout << "Wrong task number";
     }
-
     return 0;
 }

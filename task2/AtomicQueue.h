@@ -4,9 +4,9 @@
 #include "Queue.h"
 #include <atomic>
 #include <condition_variable>
-#include <queue>
-#include <array>
+#include <deque>
 #include <thread>
+#include <vector>
 
 using std::atomic;
 using std::unique_lock;
@@ -24,12 +24,12 @@ class AtomicQueue : public Queue {
 private:
     atomic<State> w_state;
     atomic<State> r_state;
-    std::queue<uint8_t> items;
     mutex r_signal;
     mutex w_signal;
     condition_variable r_cv;
     condition_variable w_cv;
     size_t max_size;
+    std::deque<atomic<uint8_t>> items;
 
 public:
 
@@ -43,7 +43,7 @@ public:
             State exp_state = FREE;
             if (w_state.compare_exchange_strong(exp_state, STORING)) {
                 if (items.size() < max_size) {
-                    items.push(val);
+                    items.emplace_back(val);
                     r_cv.notify_one();
                     w_state.store(FREE);
                     if (items.size() < max_size) w_cv.notify_one();
@@ -66,7 +66,7 @@ public:
             if (r_state.compare_exchange_strong(exp_state, LOADING)) {
                 if (!items.empty()) {
                     val = items.front();
-                    items.pop();
+                    items.pop_front();
                     r_state.store(FREE);
                     if (!items.empty()) r_cv.notify_one();
                     w_cv.notify_one();
